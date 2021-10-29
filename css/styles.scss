@@ -1,7 +1,8 @@
-$top-color:#35aac1 ;
-$lovely-color:#7e57c1;
-$brownie-light:#baa254;
-$another-lovely-color:#070706;
+$top-color:#35a9c0 ;
+$lovely-color:#8c6dab;
+$fuxin: #8125d2;
+$creamy:#ead5a3;
+
 
 *{
     margin: 0;
@@ -10,20 +11,38 @@ $another-lovely-color:#070706;
 
 body{
     font-family: 'Lobster', monospace;
-    background:$top-color;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background-image: url('/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+body::before{
+    content: '';
+    position:absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(140, 109, 171, 0.242);
+}
+body::-webkit-scrollbar{
+    display: none;
 }
 
 h3{
     text-align: center;
     margin-bottom: 2.5rem;
-    color: white;
+    color: $creamy;
     font-weight: 400;
 }
 .container{
     width: 360px;
     height: 25rem;
-    margin: 8% auto;
-    background: $lovely-color;
+    margin: 10% auto ;
+    background: rgba(140, 109, 171,0.5);
     border-radius:5px;
     position: relative;
     overflow: hidden;
@@ -42,15 +61,26 @@ form input{
     padding: 0.625rem 0.3125rem;
     margin: 0.3125rem 0;
     border: 0;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid $creamy;
     outline: none;
     background: transparent;
 }
+input:focus{
+    border: 1px solid $creamy;
+}
+input[type="text"],
+input[type="pass"] {
+    color: $creamy;
+}
+input:valid {
+    background-color: rgba(53, 169, 192, 0.5) ;
+}
 
 ::placeholder{
-    color:white;
+    color:$creamy;
     font-family: 'Lobster', monospace;
-    font-weight: 400;
+    font-weight: lighter;
+    letter-spacing: .5px;
 }
 
 .btn-box{
@@ -65,12 +95,14 @@ form button{
     margin: 0 0.625rem;
     font-family: 'Lobster', monospace;
     font-weight: 400;
-    background: linear-gradient(to right, $top-color, hsl(253, 86%, 54%));
+    background: linear-gradient(to right, $top-color, $lovely-color);
     border-radius: 1.875rem;
     border: 0;
     outline:none;
-    color: white;
+    color: $creamy;
+    letter-spacing: .5px;
     cursor:pointer;
+    box-shadow: 0 1px 5px -1px rgba(48, 48, 48, 0.811);
 }
 
 #form2{
@@ -94,7 +126,8 @@ form button{
 .step-col{
     width: 120px;
     text-align: center;
-    color:white;
+    color:$creamy;
+    letter-spacing: .5px;
     position: relative;
 }
 
@@ -102,7 +135,7 @@ form button{
     position: absolute;
     height: 100%;
     width: 120px;
-    background:linear-gradient(to right, $top-color, hsl(253, 86%, 54%));
+    background:linear-gradient(to right, $top-color, $lovely-color);
     transition: 1s;
 }
 // PUNTA DE LA FLECHA (TRIANGULO)
@@ -115,5 +148,22 @@ form button{
     position: absolute;
     right: -20px;
     top: 0;
-    border-left: 20px solid  hsl(253, 86%, 54%);
+    border-left: 20px solid  $lovely-color;
 }
+
+// popup
+// .container-all{
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     background: rgba(0 0 0 0.6);
+//     .popup{
+//         width: 100%;
+//         max-width: 800px;
+//         height: 500px;
+//         position: relative;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//     }
+// }

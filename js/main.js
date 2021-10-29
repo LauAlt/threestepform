@@ -33,3 +33,5 @@ back2.onclick = function(){
     form3.style.left = "450px";
     progress.style.width = "240px";
 }
+
+// popup
